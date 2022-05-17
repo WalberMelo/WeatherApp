@@ -1,3 +1,3 @@
 # walberMelo
 
-This project is a weather forecast page using a meteorological API. Here it is possible for the user to search for a specific city by displaying the data in Celsius.
+This project is a weather forecast page using a meteorological API. The page allows the user to search for a specific city displaying the local conditions and temperature data in Celsius.
