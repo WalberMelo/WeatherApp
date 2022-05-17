@@ -23,11 +23,12 @@ function getResults(query) {
 
 function displayResults(weather) {
   console.log(weather);
+
   let city = document.querySelector(".location .city");
   city.innerText = `${weather.name}, ${weather.sys.country}`;
 
   let callDate = new Date();
-  let date = document.querySelector(`.location .date`);
+  let date = document.querySelector(".location .date");
   date.innerText = dateBuilder(callDate);
 
   let temp = document.querySelector(".current .temp");
@@ -37,9 +38,19 @@ function displayResults(weather) {
   weather_el.innerText = weather.weather[0].main;
 
   let hilow = document.querySelector(".hi-low");
-  hilow.innerText = `${Math.round(weather.main.temp_min)}°C / ${Math.round(
-    weather.main.temp_max
-  )}°C`;
+  hilow.innerText = `Min: ${Math.round(
+    weather.main.temp_min
+  )}°C / Max: ${Math.round(weather.main.temp_max)}°C`;
+
+  let sensation = document.querySelector(".sensation");
+  sensation.innerText = `Feels like: ${weather.main.feels_like}°C`;
+
+  let humidity = document.querySelector(".humidity");
+  humidity.innerText = `Humidity: ${weather.main.humidity}°%`;
+
+  //let heatIndex = document.querySelector(".heat-index");
+
+  //TODO IMPLEMENT HEAT INDEX
 }
 
 function dateBuilder(d) {
